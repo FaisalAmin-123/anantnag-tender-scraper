@@ -1,0 +1,12 @@
+2025/10/17-18:48:33.272 3cac Reusing MANIFEST C:\tender-agent\chrome-data\Default\Local Storage\leveldb/MANIFEST-000001
+2025/10/17-18:48:33.288 3cac Recovering log #32
+2025/10/17-18:48:33.289 3cac Level-0 table #34: started
+2025/10/17-18:48:33.297 3cac Level-0 table #34: 13814 bytes OK
+2025/10/17-18:48:33.298 3cac Recovering log #34
+2025/10/17-18:48:33.302 3cac Reusing old log C:\tender-agent\chrome-data\Default\Local Storage\leveldb/000034.log 
+2025/10/17-18:48:33.305 3cac Delete type=0 #32
+2025/10/17-18:48:33.305 3cac Delete type=2 #35
+2025/10/17-18:48:33.307 1d98 Compacting 4@0 + 1@1 files
+2025/10/17-18:48:33.322 1d98 Generated table #35@0: 99 keys, 9953 bytes
+2025/10/17-18:48:33.322 1d98 Compacted 4@0 + 1@1 files => 9953 bytes
+2025/10/17-18:48:33.323 1d98 compacted to: files[ 0 1 0 0 0 0 0 ]
