@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Anantnag Tender Scraper</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <h1>🔔 Anantnag Tender Scraper</h1>
+        <p>Automatically fetch and send tender notices</p>
+    </div>
+
+    <!-- CONTAINER -->
+    <div class="container">
+        
+        <!-- STATUS SECTION -->
+        <div class="section status-section">
+            <h2>📊 System Status</h2>
+            <div class="status-box">
+                <p>Status: <span id="systemStatus" class="status-badge ready">🟢 Ready</span></p>
+                <p>API: <span id="apiStatus" class="status-badge ready">🟢 Connected</span></p>
+                <p>Last Run: <span id="lastRun">Never</span></p>
+            </div>
+        </div>
+
+        <!-- FETCH SECTION -->
+        <div class="section fetch-section">
+            <h2>📥 Fetch Tenders Now</h2>
+            
+            <div class="form-group">
+                <label for="numTenders">Number of Tenders:</label>
+                <div class="input-group">
+                    <input type="number" id="numTenders" value="10" min="1" max="50">
+                    <span class="input-info">How many tenders to fetch?</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="whatsappGroup">Send to WhatsApp Group:</label>
+                <div class="input-group">
+                    <select id="whatsappGroup" style="flex:1;padding:8px;">
+                        <option value="">(Use server default)</option>
+                    </select>
+                    <button id="refreshGroupsBtn" class="btn" style="width:160px;margin-left:8px;" onclick="loadWhatsAppGroups()">Refresh groups</button>
+                </div>
+                <small class="input-info">Choose a configured group or leave blank to use default (server account).</small>
+                <div style="margin-top:8px;">
+                    <input id="customGroup" placeholder="Custom group name (optional)" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:4px;">
+                </div>
+            </div>
+
+            <button id="fetchBtn" class="btn btn-primary" onclick="fetchTenders()">
+                <span class="btn-icon">🔄</span>
+                FETCH TENDERS NOW
+            </button>
+
+            <!-- Progress Bar -->
+            <div id="progressContainer" class="progress-container" style="display:none;">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <p id="progressText" class="progress-text">Starting...</p>
+            </div>
+        </div>
+
+        <!-- RESULTS SECTION -->
+        <div class="section results-section">
+            <h2>📂 Downloaded Files</h2>
+            <div id="resultsList" class="results-list">
+                <p class="empty-message">No files downloaded yet. Click "Fetch Tenders" to start!</p>
+            </div>
+        </div>
+
+        <!-- MESSAGES SECTION -->
+        <div id="messageBox" class="message-box" style="display:none;"></div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>Anantnag Tender Scraper System v1.0</p>
+        <p>Automatically fetches tenders and sends to WhatsApp</p>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
